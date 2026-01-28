@@ -48,19 +48,3 @@ Contains documentation for Latch workflows the agent can invoke. Each workflow d
 ## `requirements.txt`
 
 Optional file listing additional pip packages to install at pod startup. New packages can be added, but versions of packages already in [the base image requirements](https://gist.github.com/t-proctor/842bebd840eb342195e2261f706f36e9) cannot be changed due to version constraints.
-
-## How to Test
-
-If your changes are on the `main` branch of your devkit, they will be pulled in automatically for new pods. However, if you want to test changes before merging to `main`, follow these steps:
-
-1. Create a branch in your devkit with your proposed changes
-2. [SSH into your pod](https://wiki.latch.bio/plots/developer/ssh)
-3. Navigate to your tech docs directory and checkout your branch:
-   ```bash
-   cd /opt/latch/plots-faas/runtime/mount/agent_config/context/technology_docs/<your_devkit>
-   git fetch origin
-   git checkout <your_branch_name>
-   ```
-4. Test your changes
-
-**Note:** The branch will be reset to `main` on pod restart. Testing changes to `requirements.txt` on branches is not currently supported.
